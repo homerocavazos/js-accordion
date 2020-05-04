@@ -1,83 +1,102 @@
-const jsa = (function () {
-  let settings = {
-    dt: "dt",
-    dd: "dd",
-  };
+"use strict";
+let jsa = window.jsa || {};
 
-  const dt = document.querySelectorAll(settings.dt);
-  const dd = document.querySelectorAll(settings.dd);
+jsa = (() => {
+  function jsa(opts) {
+    let _ = this;
 
-  const _terms = Object.keys(dt).map(function (e) {
-    return dt[e];
-  });
-  const _definitions = Object.keys(dd).map(function (e) {
-    return dd[e];
-  });
+    _.settings = {
+      dt: "dt",
+      dd: "dd",
+      greet: "hello",
+    };
 
-  const _resetDefinitions = () => {
-    //Reset Term
-    _terms.map(function (term) {
-      term.classList.remove("active");
-    }, 0);
-    // Reset Definitions
-    _definitions.map(function (definition) {
-      definition.classList.add("collapsed");
-      definition.classList.remove("show");
-    }, 0);
-  };
+    _.terms = _.getObjs(document.querySelectorAll(_.settings.dt));
+    _.definitions = _.getObjs(document.querySelectorAll(_.settings.dd));
+  } //jsa function
 
-  const _collapse = (el) => {
-    // Add active to clicked item
-    // This takes care of the plus minus icon
-    let term = el;
-    term.classList.add("active");
-    // Show the DD
-    let definition = el.nextElementSibling;
-    definition.classList.remove("collapsed");
-    definition.classList.add("show");
-  };
+  return jsa;
+})();
 
-  const _logic = (e) => {
-    e.preventDefault();
-    let el = e.target;
-    if (el.classList.value === "active") {
-      el.classList.remove("active");
-      _resetDefinitions();
-    } else if (e.keyCode === 13) {
-      // Enter
-      _resetDefinitions();
-      _collapse(el);
-    } else if (e.keyCode === 9) {
-      // Tab
-      el.blur();
-    } else {
-      _resetDefinitions();
-      _collapse(el);
+jsa.prototype.setOpts = function (opts) {
+  let _ = this;
+  if (typeof opts == "object")
+    for (let key in opts) {
+      if (opts.hasOwnProperty(key)) {
+        _.settings[key] = opts[key];
+      }
     }
-  };
+  else return;
+};
+jsa.prototype.getOpts = function () {
+  let _ = this;
+  console.log(_.settings);
+};
 
-  const _init = () => {
-    _definitions.reduce((index, definition) => {
-      definition.classList.add("collapsed");
-      definition.setAttribute("id", "definition" + index);
-      definition.setAttribute("aria-labelledby", "term" + index);
-      index += 1;
-      return index;
-    }, 1);
+jsa.prototype.getObjs = function (objs) {
+  return Object.keys(objs).map(function (e) {
+    return objs[e];
+  });
+};
 
-    _terms.reduce((index, term) => {
-      term.addEventListener("click", _logic);
-      term.addEventListener("keydown", _logic);
-      term.setAttribute("id", "term" + index);
-      term.setAttribute("data-target", "definition" + index);
-      term.setAttribute("tabindex", "0");
-      index += 1;
-      return index;
-    }, 1);
-  };
+jsa.prototype.reset = function () {
+  let _ = this;
+  _.terms.map(function (term) {
+    term.classList.remove("active");
+  });
+  _.definitions.map(function (definition) {
+    definition.classList.add("collapsed");
+    definition.classList.remove("show");
+  });
+};
 
-  // Public API
-  return {
-    init: _init,
-  };
-})(); //jsa
+jsa.prototype.collapse = function (el) {
+  el.classList.add("active");
+
+  let definition = el.nextElementSibling;
+  definition.classList.remove("collapsed");
+  definition.classList.add("show");
+};
+
+jsa.prototype.logic = function (e) {
+  e.preventDefault();
+
+  let _ = this; // this obj not event
+  let el = e.target;
+
+  if (el.classList.value === "active") {
+    el.classList.remove("active");
+    _.reset();
+  } else if (e.keyCode === 13) {
+    // Enter
+    _.reset();
+    _.collapse(el);
+  } else if (e.keyCode === 9) {
+    // Tab
+    el.blur();
+  } else {
+    _.reset();
+    _.collapse(el);
+  }
+};
+jsa.prototype.init = function (opts) {
+  let _ = this;
+  _.setOpts(opts);
+
+  _.definitions.reduce((index, definition) => {
+    definition.classList.add("collapsed");
+    definition.setAttribute("id", "definition" + index);
+    definition.setAttribute("aria-labelledby", "term" + index);
+    index += 1;
+    return index;
+  }, 1);
+  _.terms.reduce((index, term) => {
+    term.addEventListener("click", _.logic.bind(this));
+    term.addEventListener("keydown", _.logic.bind(this));
+    term.setAttribute("id", "term" + index);
+    term.setAttribute("data-target", "definition" + index);
+    term.setAttribute("tabindex", "0");
+    index += 1;
+    return index;
+  }, 1);
+};
