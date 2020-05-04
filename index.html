@@ -3,13 +3,90 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vanila Accordion</title>
-  <link rel="stylesheet" href="./_css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./_css/jsa-theme.css">
+  <style>
+    * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+    body {
+      color: rgba(0,0,0,0.87);
+      font-family: 'Red Hat Text', sans-serif;
+    }
+    section{
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    section div {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+    h1 {
+      
+      font-weight: 100;
+      font-size: 30px;
+      margin:0;
+
+    }
+    h1 span {
+      /* border: 1px solid lightblue; */
+      padding: 5px 10px;
+      margin: 0 1px;
+      display: inline-block;
+      background-color: coral;
+      color: #ffffff;
+    }
+    h2 {
+      font-size: 16px;
+      font-weight: 400;
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    p {
+      font-size: 14px;
+      color: #333333;
+      font-weight: 400;
+    }
+    hr {
+      background-color: lightpink;
+      border:none;
+      height: 1px;
+    }
+    dl, dt, dd {
+      font-family: 'Red Hat Text', sans-serif;
+    }
+    dt {
+      font-weight: 700;
+    }
+    pre {
+      padding: 10px;
+      background-color: #d3d3d326;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
   <section>
+    <h1><span>J</span><span>S</span><span>A</span> JavaScript Accordion</h1>
+    <h2>Developed by Homero Cavazos</h2>
+   
+    
+  </section>
+  <section>
     <dl class="jsa">
-      <dt>Term 1</dt>
-      <dd><div><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia quis, ipsum odio nisi facilis similique voluptate dolorem sapiente eius cumque nesciunt? </p></div></dd>
+      <dt>Markup</dt>
+      <dd>
+<pre>
+&lt;dl class=&quot;jsa&quot;&gt;
+  &lt;dt&gt;&lt;/dt&gt;
+  &lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+</pre>
+
+      </dd>
       <dt>Term 2</dt>
       <dd><div><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia quis, ipsum odio nisi facilis similique voluptate dolorem sapiente eius cumque nesciunt? </p></div></dd>
       <dt>Term 3</dt>
@@ -18,15 +95,13 @@
       <dd><div><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia quis, ipsum odio nisi facilis similique voluptate dolorem sapiente eius cumque nesciunt? </p></div></dd>
     </dl>
   </section>
+  
 
   <script src="./_js/jsa.js"></script>
   <script>
     
-    var homer = new jsa()
-   homer.init();
-    
- 
-
+    var example = new jsa();
+    example.init();
     
 
   </script>
