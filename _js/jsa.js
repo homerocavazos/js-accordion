@@ -2,7 +2,7 @@
 let jsa = window.jsa || {};
 
 jsa = (() => {
-  function jsa(opts) {
+  function jsa() {
     let _ = this;
 
     _.settings = {
@@ -10,9 +10,13 @@ jsa = (() => {
       dd: "dd",
       greet: "hello",
     };
+    _.el = ".jsa";
 
-    _.terms = _.getObjs(document.querySelectorAll(_.settings.dt));
-    _.definitions = _.getObjs(document.querySelectorAll(_.settings.dd));
+    _.terms = _.getObjs(document.querySelectorAll(`${_.el} ${_.settings.dt}`));
+
+    _.definitions = _.getObjs(
+      document.querySelectorAll(`${_.el} ${_.settings.dd}`)
+    );
   } //jsa function
 
   return jsa;
@@ -28,7 +32,10 @@ jsa.prototype.setOpts = function (opts) {
     }
   else return;
 };
-
+jsa.prototype.setParentEL = function (el) {
+  let _ = this;
+  el = _.el;
+};
 jsa.prototype.getObjs = function (objs) {
   return Object.keys(objs).map(function (e) {
     return objs[e];
@@ -75,8 +82,9 @@ jsa.prototype.logic = function (e) {
     _.collapse(el);
   }
 };
-jsa.prototype.init = function (opts) {
+jsa.prototype.init = function (el, opts) {
   let _ = this;
+  _.setParentEL(el);
   _.setOpts(opts);
 
   _.definitions.reduce((index, definition) => {
