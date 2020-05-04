@@ -28,10 +28,6 @@ jsa.prototype.setOpts = function (opts) {
     }
   else return;
 };
-jsa.prototype.getOpts = function () {
-  let _ = this;
-  console.log(_.settings);
-};
 
 jsa.prototype.getObjs = function (objs) {
   return Object.keys(objs).map(function (e) {
@@ -61,7 +57,7 @@ jsa.prototype.collapse = function (el) {
 jsa.prototype.logic = function (e) {
   e.preventDefault();
 
-  let _ = this; // this obj not event
+  let _ = this; // this obj jsa not event
   let el = e.target;
 
   if (el.classList.value === "active") {
