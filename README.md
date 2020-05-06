@@ -1,2 +1,3 @@
-# jsa
-JavaScript Accessible Accordion
+# JSA
+Javascript Accordion
+[See demo and instructions](https://jsa.homerocavazos.com/)
