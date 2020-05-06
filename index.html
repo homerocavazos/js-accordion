@@ -77,13 +77,15 @@
 
     }
     h3 {
-      font-size: 20px;
-      font-weight: 700;
+      font-size: 16px;
+      font-weight: 600;
+      padding-left: 30px;
     }
     p {
       font-size: 14px;
       color: #333000;
       font-weight: 400;
+      margin:10px 0;
     }
     hr {
       background-color: lightpink;
@@ -134,31 +136,37 @@
         <dt>Markup</dt>
         <dd>
           <div>
-         <p>By default the Description List needs <span>.jsa</span> class to activate the accordion. You may use a custom ID or custom Class but it needs to be updated in the instance. See JavaScript tab.</p>
-      <pre>
+         <p>To activate the accordion add <span>.jsa</span> class to the &lt;dl&gt; tag. See JavaScript section for settings.</p>
+<pre>
 &lt;dl class=&quot;jsa&quot;&gt;
   &lt;dt&gt;&lt;/dt&gt;
   &lt;dd&gt;&lt;/dd&gt;
 &lt;/dl&gt;
-      </pre>
+</pre>
     </div>
-    
       </dd>
       <dt>JavaScript</dt>
       <dd>
+  <div>
+    <p><strong>Basic Setup</strong></p>
 <pre>
   var example = new jsa();
   example.init();
 </pre>
-
+<p><strong>Custom Selector</strong></p>
+<pre>
+  example.init('#myAccordion');
+</pre>
+  </div>
       </dd>
       <dt>CSS</dt>
-      <dd><div><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia quis, ipsum odio nisi facilis similique voluptate dolorem sapiente eius cumque nesciunt? </p></div></dd>
+      <dd><div><p>The default theme defines the collapse state, even &amp; odd and the toggle open close icons.</p></div></dd>
       
     </dl>
   </section>
 
 
+ 
   <script src="./_js/jsa.js"></script>
   <script>
 
