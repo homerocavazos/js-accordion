@@ -1,18 +1,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" href="favicon.ico?" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon" />
+  <meta charset="UTF-8">
+  <meta name="description" content="A collection of works as a Web Developer.">
+  <meta name="keywords" content="Austin, Georgetown, Texas, php, JavaScript, css, html">
+  <meta name="author" content="Homero Cavazos">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vanila Accordion</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta property="og:title" content="Homero Cavazos | Web Developer"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://homerocavazos.com/"/>
+  <meta property="og:image" content="https://homerocavazos.com/img/HOM_2665.jpg"/>
+  <meta property="og:site_name" content="Homero Cavazos | Web Developer"/>
+  <meta property="og:description" content="Homero Cavazos is an Austin Texas based developer."/>
+  <title>JSA Accordion</title>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./_css/jsa-theme.css">
   <style>
     * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
     body {
       color: rgba(0,0,0,0.87);
       font-family: 'Red Hat Text', sans-serif;
+      margin: 30px 0;
     }
     section{
       max-width: 1200px;
@@ -23,12 +38,29 @@
       margin: 0 auto;
     }
     h1 {
-
+      position: relative;
       font-weight: 100;
       font-size: 30px;
       margin:0;
-
+      /* padding-left: 36px; */
     }
+    /* h1::before {
+        content: "";
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        vertical-align: middle;
+        background-position: center center;
+        display: inline-block;
+        background-size: contain;
+        vertical-align: middle;
+        background-position: center center;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-image: url(http://homerocavazos.com/Monkey-logo.svg);
+      } */
     h1 span {
       /* border: 1px solid lightblue; */
       padding: 5px 10px;
@@ -38,8 +70,11 @@
       color: #ffffff;
     }
     h2 {
+      position: relative;
       font-size: 16px;
       font-weight: 400;
+      margin-bottom: 40px;
+
     }
     h3 {
       font-size: 20px;
@@ -47,7 +82,7 @@
     }
     p {
       font-size: 14px;
-      color: #333333;
+      color: #333000;
       font-weight: 400;
     }
     hr {
@@ -66,33 +101,60 @@
       background-color: #d3d3d326;
       border-radius: 10px;
     }
+    div {
+      padding: 10px 30px;
+    }
+    div span {
+
+      font-weight: bold;
+      
+    }
   </style>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64412307-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-64412307-1');
+</script>
 </head>
 <body>
   <section>
     <h1><span>J</span><span>S</span><span>A</span> JavaScript Accordion</h1>
     <h2>Developed by Homero Cavazos</h2>
-
-
   </section>
   <section>
-    <dl class="jsa">
-      <dt>Markup</dt>
-      <dd>
-<pre>
+    <p>The accordion is based on the Description List element. </p>
+    
+      
+      <dl class="jsa">
+        
+        <dt>Markup</dt>
+        <dd>
+          <div>
+         <p>By default the Description List needs <span>.jsa</span> class to activate the accordion. You may use a custom ID or custom Class but it needs to be updated in the instance. See JavaScript tab.</p>
+      <pre>
 &lt;dl class=&quot;jsa&quot;&gt;
   &lt;dt&gt;&lt;/dt&gt;
   &lt;dd&gt;&lt;/dd&gt;
 &lt;/dl&gt;
+      </pre>
+    </div>
+    
+      </dd>
+      <dt>JavaScript</dt>
+      <dd>
+<pre>
+  var example = new jsa();
+  example.init();
 </pre>
 
       </dd>
-      <dt>Term 2</dt>
+      <dt>CSS</dt>
       <dd><div><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia quis, ipsum odio nisi facilis similique voluptate dolorem sapiente eius cumque nesciunt? </p></div></dd>
-      <dt>Term 3</dt>
-      <dd><div><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia quis, ipsum odio nisi facilis similique voluptate dolorem sapiente eius cumque nesciunt? </p></div></dd>
-      <dt>Term 4</dt>
-      <dd><div><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia quis, ipsum odio nisi facilis similique voluptate dolorem sapiente eius cumque nesciunt? </p></div></dd>
+      
     </dl>
   </section>
 
