@@ -16,10 +16,10 @@ let jsa = window.jsa || {};
 
 jsa = (() => {
   function jsa() {
-    let _ = this;
+    const _ = this;
 
     _.settings = {
-      dt: "dt",
+      dt: "a",
       dd: "dd",
     };
     _.el = null;
@@ -29,7 +29,6 @@ jsa = (() => {
 })();
 
 jsa.prototype.setOpts = function (opts) {
-  let _ = this;
   if (typeof opts == "object")
     for (let key in opts) {
       if (opts.hasOwnProperty(key)) {
@@ -41,6 +40,11 @@ jsa.prototype.setOpts = function (opts) {
 jsa.prototype.setParentEL = function (el) {
   let _ = this;
   _.el = el || ".jsa";
+};
+jsa.prototype.getID = function (el) {
+  let _ = this;
+  let id = _.el.replace(".", "");
+  return id;
 };
 jsa.prototype.getObjs = function (objs) {
   return Object.keys(objs).map(function (e) {
@@ -62,9 +66,11 @@ jsa.prototype.reset = function () {
 jsa.prototype.collapse = function (el) {
   el.classList.add("active");
 
-  let definition = el.nextElementSibling;
-  definition.classList.remove("collapsed");
-  definition.classList.add("show");
+  let triggerID = el.dataset.target;
+  let targetDefinition = document.getElementById(triggerID);
+
+  targetDefinition.classList.remove("collapsed");
+  targetDefinition.classList.add("show");
 };
 
 jsa.prototype.logic = function (e) {
@@ -77,10 +83,6 @@ jsa.prototype.logic = function (e) {
     el.classList.remove("active");
     _.reset();
     el.blur();
-  } else if (e.keyCode === 13) {
-    // Enter
-    _.reset();
-    _.collapse(el);
   } else {
     _.reset();
     _.collapse(el);
@@ -94,21 +96,23 @@ jsa.prototype.init = function (el, opts) {
 
   _.terms = _.getObjs(document.querySelectorAll(`${_.el} ${_.settings.dt}`));
 
+  _.terms.map(function (a) {
+    a.addEventListener("click", _.logic.bind(_));
+  });
+
   _.definitions = _.getObjs(
     document.querySelectorAll(`${_.el} ${_.settings.dd}`)
   );
   _.definitions.reduce((index, definition) => {
     definition.classList.add("collapsed");
-    definition.setAttribute("id", "definition" + index);
-    definition.setAttribute("aria-labelledby", "term" + index);
+    definition.setAttribute("id", `${_.getID()}-definition` + index);
+    definition.setAttribute("aria-labelledby", `${_.getID()}-term` + index);
     index += 1;
     return index;
   }, 1);
   _.terms.reduce((index, term) => {
-    term.addEventListener("click", _.logic.bind(this));
-    term.addEventListener("keydown", _.logic.bind(this));
-    term.setAttribute("id", "term" + index);
-    term.setAttribute("data-target", "definition" + index);
+    term.setAttribute("id", `${_.getID()}-term` + index);
+    term.setAttribute("data-target", `${_.getID()}-definition` + index);
     term.setAttribute("tabindex", "0");
     index += 1;
     return index;
