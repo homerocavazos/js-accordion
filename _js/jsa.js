@@ -76,16 +76,13 @@ jsa.prototype.logic = function (e) {
   if (el.classList.value === "active") {
     el.classList.remove("active");
     _.reset();
+    el.blur();
   } else if (e.keyCode === 13) {
     // Enter
     _.reset();
     _.collapse(el);
-  } else if (e.keyCode === 9) {
-    // Tab
-    el.blur();
   } else {
-    _.reset();
-    _.collapse(el);
+    el.blur();
   }
 };
 jsa.prototype.init = function (el, opts) {
