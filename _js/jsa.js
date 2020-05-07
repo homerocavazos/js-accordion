@@ -82,6 +82,8 @@ jsa.prototype.logic = function (e) {
     _.reset();
     _.collapse(el);
   } else {
+    _.reset();
+    _.collapse(el);
     el.blur();
   }
 };
