@@ -18,7 +18,9 @@
   <meta property="og:description" content="Homero Cavazos is an Austin Texas based developer."/>
   <title>JSA Accordion</title>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./_css/jsa-theme.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/homerocavazos/js-accordion@master/_css/jsa-theme.min.css"
+    integrity="sha384-RT0W4dRolQxg7Kqf6slCOxF/poCOfEUOMKia9OoHHySBJMQh3P5rmV91REGA1Nk/" crossorigin="anonymous">
+
   <link rel="stylesheet" href="./_css/style.css">
       <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64412307-1"></script>
@@ -37,47 +39,76 @@
   </div>
 
   <div>
-    <div class="flex">
-      <p>The accordion is based on the Description List element. </p>
+    <div class="flex underline">
+      <p>This Accordion is based on The Description List Element.</p>
       <a href="https://github.com/homerocavazos/jsa" target="_blank" class="download">Download</a>
     </div>
-      <dl class="jsa">
+    <dl class="jsa">
 
-        <dt><a href="#">Markup</a></dt>
-        <dd>
-          <div>
-         <p>To activate the accordion add <span>.jsa</span> class to the &lt;dl&gt; tag. The dt needs to have an anchor tag for best accessibility experience. See JavaScript section for settings.</p>
-<pre>
-&lt;dl class=&quot;jsa&quot;&gt;
-  &lt;dt&gt;&lt;a href="#"&gt;Hello World&lt;/a&gt;&lt;/dt&gt;
-  &lt;dd&gt;&lt;/dd&gt;
-&lt;/dl&gt;
-</pre>
-    </div>
-      </dd>
-      <dt><a href="#">JavaScript</a></dt>
-      <dd>
-  <div>
-    <p><strong>Basic Setup</strong></p>
-<pre>
-  var example = new jsa();
-  example.init();
-</pre>
-<p><strong>Custom Selector</strong></p>
-<pre>
-  example.init('#myAccordion');
-</pre>
-  </div>
-      </dd>
-      <dt><a href="#">CSS</a></dt>
-      <dd><div><p>The default theme defines the collapse state, even &amp; odd and the toggle open close icons.</p></div></dd>
+      <dt><a href="#">Title One</a></dt>
+      <dd>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptates, necessitatibus amet architecto illum placeat laudantium animi numquam officia eum, eligendi iste similique iusto natus unde. Enim est earum in.</dd>
+
+      <dt><a href="#">Title Two</a></dt>
+      <dd>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptates, necessitatibus amet architecto illum placeat laudantium animi numquam officia eum, eligendi iste similique iusto natus unde. Enim est earum in.</dd>
+
+      <dt><a href="#">Title Three</a></dt>
+      <dd>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptates, necessitatibus amet architecto illum placeat laudantium animi numquam officia eum, eligendi iste similique iusto natus unde. Enim est earum in.</dd>
 
     </dl>
   </div>
+<div>
+
+<article>
+  <h3>NPM</h3>
+  <pre>
+npm i @js-toolbox/js-accordion</pre>
+  <h3>CDN</h3>
+    <h4>CSS</h4>
+  <pre>
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/homerocavazos/js-accordion@master/_css/jsa-theme.min.css&quot;
+  integrity=&quot;sha384-RT0W4dRolQxg7Kqf6slCOxF/poCOfEUOMKia9OoHHySBJMQh3P5rmV91REGA1Nk/&quot; crossorigin=&quot;anonymous&quot;&gt;
+</pre>
+<h4>JS</h4>
+  <pre>
+&#x3C;script src=&#x22;https://cdn.jsdelivr.net/gh/homerocavazos/js-accordion@master/_js/jsa.min.1.2.js&#x22;
+  integrity=&#x22;sha384-8fF9qqR0P8Ylsznek1CxmiDG6APtcNg00AUlydEWYj9Hk6ZJ+5NsBLFR0jV1MmMD&#x22; crossorigin=&#x22;anonymous&#x22;&#x3E;&#x3C;/script&#x3E;</pre>
+  <h3>Usage</h3>
+  <h4>HTML</h4>
+  <p>To activate the accordion add <span>.jsa</span> class to the &lt;dl&gt; tag. The dt needs to have an anchor tag for best accessibility experience.</p>
+  <pre>
+&lt;dl class=&quot;jsa&quot;&gt;
+
+  &lt;dt&gt;&lt;a href="#"&gt;Title One&lt;/a&gt;&lt;/dt&gt;
+  &lt;dd&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. &lt;/dd&gt;
+
+  &lt;dt&gt;&lt;a href="#"&gt;Title Two&lt;/a&gt;&lt;/dt&gt;
+  &lt;dd&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. &lt;/dd&gt;
+
+  &lt;dt&gt;&lt;a href="#"&gt;Title Three&lt;/a&gt;&lt;/dt&gt;
+  &lt;dd&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. &lt;/dd&gt;
+
+&lt;/dl&gt;</pre>
+<h4>JavaScript</h4>
+
+<pre>
+// Instansiate
+var example = new jsa();
+
+// Default with .jsa class
+example.init();
+
+// Custom selector
+example.init('#myAccordion');
+</pre>
 
 
+</article>
 
-  <script src="./_js/jsa.1.2.js"></script>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/gh/homerocavazos/js-accordion@master/_js/jsa.min.1.2.js"
+    integrity="sha384-8fF9qqR0P8Ylsznek1CxmiDG6APtcNg00AUlydEWYj9Hk6ZJ+5NsBLFR0jV1MmMD" crossorigin="anonymous"></script>
+
   <script>
 
     var example = new jsa();

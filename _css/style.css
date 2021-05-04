@@ -62,7 +62,16 @@ h2::before {
 h3 {
   font-size: 16px;
   font-weight: 600;
-  padding-left: 30px;
+  padding: 10px 0 0 0;
+  width: 100%;
+  border-top: 1px lightblue solid;
+}
+h4 {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0 0 0 10px;
+  margin: 0;
+  width: 100%;
 }
 p {
   font-size: 14px;
@@ -150,4 +159,9 @@ a {
   pre {
     font-size: 13px;
   }
+}
+.underline {
+  border-bottom: 1px lightblue solid;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
