@@ -30,7 +30,7 @@ npm i @js-toolbox/js-accordion
 
 ### Usage
 
-To activate the accordion add .jsa class to the <dl> tag. The dt needs to have an anchor tag for best accessibility experience.
+To activate the accordion add .jsa class to the `<dl>` tag. The dt needs to have an anchor tag for best accessibility experience.
 
 #### HTML
 
