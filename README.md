@@ -52,7 +52,7 @@ To activate the accordion add .jsa class to the <dl> tag. The dt needs to have a
 #### JavaScript
 
 ```
-// Instansiate
+// Instantiate
 var example = new jsa();
 
 // Default with .jsa class
