@@ -19,10 +19,10 @@ dt a::after {
   background-position: center center;
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url(../_imgs/icon-plus-black.png);
+  background-image: url(https://cdn.jsdelivr.net/gh/homerocavazos/js-accordion@master/_imgs/icon-plus-black.png);
 }
 dt a.active::after {
-  background-image: url(../_imgs/icon-minus-black.png);
+  background-image: url(https://cdn.jsdelivr.net/gh/homerocavazos/js-accordion@master/_imgs/icon-minus-black.png);
 }
 
 dt:nth-child(4n + 1),
