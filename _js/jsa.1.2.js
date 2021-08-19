@@ -6,7 +6,7 @@
  ___/\/\/\/\____/\/\/\/\/\____/\/\____/\/\_
 __________________________________________
 
- Version: 1.0.0
+ Version: 1.2.1
   Author: Homero Cavazos
  Website: https://github.com/homerocavazos/jsa
 
@@ -80,15 +80,18 @@ jsa.prototype.logic = function (e) {
   let _ = this // this jsa obj
   let el = e.target
 
-  if (el.classList.value === "active") {
-    el.classList.remove("active")
-    _.reset()
-    el.blur()
-  } else {
-    _.reset()
-    _.collapse(el)
-    el.blur()
+  if (el.nodeName === 'A' && el.parentNode.nodeName === 'DT') {
+    if (el.classList.value === "active") {
+      el.classList.remove("active")
+      _.reset()
+      el.blur()
+    } else {
+      _.reset()
+      _.collapse(el)
+      el.blur()
+    }
   }
+
 }
 jsa.prototype.init = function (el, opts) {
   let _ = this
@@ -97,9 +100,8 @@ jsa.prototype.init = function (el, opts) {
 
   _.terms = _.getObjs(document.querySelectorAll(`${_.el} ${_.settings.dt}`))
 
-  _.terms.map(function (a) {
-    a.addEventListener("click", _.logic.bind(_))
-  })
+  // Event Delegation
+  document.querySelector(_.el).addEventListener("click", _.logic.bind(_));
 
   _.definitions = _.getObjs(
     document.querySelectorAll(`${_.el} ${_.settings.dd}`)
