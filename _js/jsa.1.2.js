@@ -6,7 +6,7 @@
  ___/\/\/\/\____/\/\/\/\/\____/\/\____/\/\_
 __________________________________________
 
- Version: 1.2.1
+ Version: 1.2.2
   Author: Homero Cavazos
  Website: https://github.com/homerocavazos/jsa
 
@@ -101,7 +101,9 @@ jsa.prototype.init = function (el, opts) {
   _.terms = _.getObjs(document.querySelectorAll(`${_.el} ${_.settings.dt}`))
 
   // Event Delegation
-  document.querySelector(_.el).addEventListener("click", _.logic.bind(_));
+  if (document.querySelector(_.el)) {
+    document.querySelector(_.el).addEventListener("click", _.logic.bind(_));
+  }
 
   _.definitions = _.getObjs(
     document.querySelectorAll(`${_.el} ${_.settings.dd}`)
