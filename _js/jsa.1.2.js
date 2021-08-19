@@ -6,7 +6,7 @@
  ___/\/\/\/\____/\/\/\/\/\____/\/\____/\/\_
 __________________________________________
 
- Version: 1.2.2
+ Version: 1.2.3
   Author: Homero Cavazos
  Website: https://github.com/homerocavazos/jsa
 
@@ -75,12 +75,14 @@ jsa.prototype.collapse = function (el) {
 }
 
 jsa.prototype.logic = function (e) {
-  e.preventDefault()
 
   let _ = this // this jsa obj
   let el = e.target
 
   if (el.nodeName === 'A' && el.parentNode.nodeName === 'DT') {
+    e.preventDefault();
+    e.stopPropagation();
+
     if (el.classList.value === "active") {
       el.classList.remove("active")
       _.reset()
