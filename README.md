@@ -9,9 +9,6 @@ This Accordion is based on The Description List Element.
 npm i @js-toolbox/js-accordion
 ```
 
-### CDN
-
-
 ### Usage
 
 To activate the accordion add .jsa class to the `<dl>` tag. The dt needs to have an anchor tag for best accessibility experience.
@@ -48,6 +45,5 @@ example.init('#myAccordion');
 // Custom question selector
 example.init('#myAccordion', { 
   dt: "dt a"
- }
-);
+ });
 ```
