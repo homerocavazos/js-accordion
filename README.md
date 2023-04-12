@@ -42,6 +42,9 @@ example.init();
 // Custom parent selector
 example.init('#myAccordion');
 
+```
+If you plan on adding links in the definition block its best to define the direct selector in the _dt_ option.
+```
 // Custom question selector
 example.init('#myAccordion', { 
   dt: "dt a"
