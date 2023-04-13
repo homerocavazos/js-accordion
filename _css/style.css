@@ -57,7 +57,7 @@ h2::before {
   display: inline-block;
   background-repeat: no-repeat;
   /* background-image: url(https://jsa.homerocavazos.com/_imgs/github-logo.svg); */
-  background-image: url(https://jsa.homerocavazos.com/_imgs/fullMonkey-bw.svg);
+  background-image: url(../_imgs/fullMonkey-bw.svg);
 }
 h3 {
   font-size: 16px;
@@ -93,10 +93,31 @@ dt {
   font-weight: 700;
 }
 pre {
-  padding: 10px;
+
   background-color: #d3d3d326;
-  border-radius: 10px;
+  border-radius: 5px;
   font-size: 11px;
+  padding: 1em;
+  color: #abb2bf;
+  background: #282c34;
+}
+.h-el{
+  color: #e06c75;
+}
+.h-attr{
+  color: #d19a66;
+}
+.h-string{
+  color: #98c379;
+}
+.hjs-new{
+  color: #9fae62;
+}
+.hjs-var{
+  color: #e97f4d;
+}
+.hjs-comment{
+  color: #88786a;
 }
 div {
   padding: 10px 5px;
@@ -123,7 +144,7 @@ div {
   background-position: center center;
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url(https://jsa.homerocavazos.com/_imgs/github-logo.svg);
+  background-image: url(../_imgs/github-logo.svg);
 }
 a {
   font-family: "Red Hat Text", sans-serif;
@@ -157,7 +178,8 @@ a {
     padding: 10px 30px;
   }
   pre {
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 400;
   }
 }
 .underline {
