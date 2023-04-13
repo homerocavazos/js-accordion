@@ -86,15 +86,24 @@ npm i <span class="h-string">@js-toolbox/js-accordion</span></pre>
 
 <span class="hjs-comment">// Default with .jsa class</span>
 example.init();
+</pre>
 
+<h3>Options</h3>
+<h4>Parent Selector</h4>
+<p>The default required selector name is &lt;dl <span class="h-el"><strong>class="jsa"</strong></span>&gt;. You may choose a different name but you will have to specify it in the init function as the first argument. This is useful when creating multiple accordions on a page. Each instance must be unique.</p>
+<pre>
 <span class="hjs-comment">// Custom selector</span>
 example.init(<span class="h-attr">'#myAccordion'</span>);
-
-<span class="hjs-comment">// Custom question selector</span>
-<span class="hjs-comment">example.init( '#myAccordion'</span>, { dt: <span class="h-el">"dt a"</span>} );
+example2.init(<span class="h-attr">'.accordion2'</span>);
 </pre>
 
 
+<p>By default the selector for opening each drawer is the anchor tag in the  <strong><span class="h-el">&lt;dt&gt;</span></strong> tag. You don't have to set this </p>
+
+<pre>
+<span class="hjs-comment">// Custom question selector</span>
+<span class="hjs-comment">example.init( '#myAccordion'</span>, { dt: <span class="h-el">"dt a"</span>} );
+</pre>
 
 </article>
 
