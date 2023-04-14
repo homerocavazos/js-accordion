@@ -94,7 +94,7 @@ dt {
   font-weight: 700;
 }
 pre {
-
+  overflow-x: scroll;
   background-color: #d3d3d326;
   border-radius: 5px;
   font-size: 11px;
@@ -181,7 +181,9 @@ a {
   pre {
     font-size: 14px;
     font-weight: 400;
+    overflow-x:visible;
   }
+
 }
 .underline {
   border-bottom: 1px lightblue solid;

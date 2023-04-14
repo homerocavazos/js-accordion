@@ -3,6 +3,11 @@
 This Accordion is based on The Description List Element.
 
 
+
+### Demo
+https://jsa.homerocavazos.com/
+[Javascript Accordion](https://jsa.homerocavazos.com/)
+
 ### NPM
 
 ```
@@ -39,14 +44,23 @@ var example = new jsa();
 // Default with .jsa class
 example.init();
 
-// Custom parent selector
-example.init('#myAccordion');
+```
+
+### Options
+
+#### Parent Selector
+
+The default required selector name is <dl class="jsa">. You may choose a different selector name as long as you specify it in the init function as the first argument. This is useful when creating multiple accordions on a page. Each instance must be unique.
 
 ```
-If you plan on adding links in the definition block its best to define the direct selector in the _dt_ option.
+// Custom selector
+example.init('#myAccordion');
+example2.init('.accordion2');
+```
+
+By default the selector for opening each drawer is the anchor tag in the <dt> tag. You can change this by updating the dt option.
+
 ```
 // Custom question selector
-example.init('#myAccordion', { 
-  dt: "dt a"
- });
+example.init( '#myAccordion', { dt: "dt a"} );
 ```

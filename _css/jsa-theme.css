@@ -29,7 +29,6 @@ dt a.active::after {
   background-image: url(../_imgs/icon-minus-black.png);
 }
 
-dt:nth-child(4n + 1),
 dt:nth-child(4n + 1) {
   background-color: #e1f2fb;
 }
