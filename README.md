@@ -6,7 +6,7 @@ This Accordion is based on The Description List Element.
 
 ### Demo
 https://jsa.homerocavazos.com/
-[Javascript Accordion](https://jsa.homerocavazos.com/)
+
 
 ### NPM
 
