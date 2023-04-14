@@ -50,7 +50,7 @@ example.init();
 
 #### Parent Selector
 
-The default required selector name is <dl class="jsa">. You may choose a different selector name as long as you specify it in the init function as the first argument. This is useful when creating multiple accordions on a page. Each instance must be unique.
+The default required selector name is `<dl class="jsa">`. You may choose a different selector name as long as you specify it in the init function as the first argument. This is useful when creating multiple accordions on a page. Each instance must be unique.
 
 ```
 // Custom selector
@@ -58,7 +58,7 @@ example.init('#myAccordion');
 example2.init('.accordion2');
 ```
 
-By default the selector for opening each drawer is the anchor tag in the <dt> tag. You can change this by updating the dt option.
+By default the selector for opening each drawer is the anchor tag in the `<dt>` tag. You can change this by updating the dt option.
 
 ```
 // Custom question selector
