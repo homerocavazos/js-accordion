@@ -3,6 +3,11 @@
 This Accordion is based on The Description List Element.
 
 
+
+### Demo
+https://jsa.homerocavazos.com/
+
+
 ### NPM
 
 ```
@@ -11,9 +16,9 @@ npm i @js-toolbox/js-accordion
 
 ### Usage
 
-To activate the accordion add .jsa class to the `<dl>` tag. The dt needs to have an anchor tag for best accessibility experience.
+To activate the accordion add .jsa class to the `<dl>` tag. The `<dt><a>...` needs to have an anchor tag for best accessibility experience. The app takes care of all of the necessary attributes for activating the target elements. Your markup only needs to contain the following:
 
-#### HTML
+#### HTML markup
 
 ```
 <dl class="jsa">
@@ -31,6 +36,7 @@ To activate the accordion add .jsa class to the `<dl>` tag. The dt needs to have
 ```
 
 #### JavaScript
+In order to activate the accordion you must create an instance of the `jsa` app. This will automatically look for an element with the class `.jsa` to recognize the accordion.
 
 ```
 // Instantiate
@@ -39,14 +45,23 @@ var example = new jsa();
 // Default with .jsa class
 example.init();
 
-// Custom parent selector
-example.init('#myAccordion');
+```
+
+### Options
+
+#### Parent Selector
+
+The default required selector name is `<dl class="jsa">`. You may choose a different selector name as long as you specify it in the `.init()` function as the first argument. This is useful when creating multiple accordions on a page. Each instance must be unique.
 
 ```
-If you plan on adding links in the definition block its best to define the direct selector in the _dt_ option.
+// Custom selector
+example.init('#myAccordion');
+example2.init('.accordion2');
+```
+
+By default the selector for opening each drawer is the anchor tag in the `<dt>` tag. You can change this by updating the dt option.
+
 ```
 // Custom question selector
-example.init('#myAccordion', { 
-  dt: "dt a"
- });
+example.init( '#myAccordion', { dt: "dt a"} );
 ```

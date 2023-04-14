@@ -13,15 +13,14 @@
   <meta property="og:title" content="Homero Cavazos | Web Developer"/>
   <meta property="og:type" content="article"/>
   <meta property="og:url" content="https://homerocavazos.com/"/>
-  <meta property="og:image" content="https://jsa.homerocavazos.com/_imgs/homero-logo-profile.png"/>
+  <meta property="og:image" content="./_imgs/homero-logo-profile.png"/>
   <meta property="og:site_name" content="Homero Cavazos | Web Developer"/>
   <meta property="og:description" content="Homero Cavazos is an Austin Texas based developer."/>
   <title>JSA Accordion</title>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/homerocavazos/js-accordion@master/_css/jsa-theme.min.css"
-    integrity="sha384-RT0W4dRolQxg7Kqf6slCOxF/poCOfEUOMKia9OoHHySBJMQh3P5rmV91REGA1Nk/" crossorigin="anonymous">
+  <link rel="stylesheet" href="_css/jsa-theme.css">
 
-  <link rel="stylesheet" href="./_css/style.css">
+  <link rel="stylesheet" href="_css/style.css">
       <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64412307-1"></script>
 <script>
@@ -61,53 +60,56 @@
 <article>
   <h3>NPM</h3>
   <pre>
-npm i @js-toolbox/js-accordion</pre>
-  <h3>CDN</h3>
-    <h4>CSS</h4>
-  <pre>
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/homerocavazos/js-accordion@master/_css/jsa-theme.min.css&quot;
-  integrity=&quot;sha384-RT0W4dRolQxg7Kqf6slCOxF/poCOfEUOMKia9OoHHySBJMQh3P5rmV91REGA1Nk/&quot; crossorigin=&quot;anonymous&quot;&gt;
-</pre>
-<h4>JS</h4>
-  <pre>
-&#x3C;script src=&#x22;https://cdn.jsdelivr.net/gh/homerocavazos/js-accordion@master/_js/jsa.min.1.2.js&#x22;
-  integrity=&#x22;sha256-hCA6iRo13x6jnWhMKkj+aWNqvscvagfYn3mIusutscg=&#x22; crossorigin=&#x22;anonymous&#x22;&#x3E;&#x3C;/script&#x3E;</pre>
+npm i <span class="h-string">@js-toolbox/js-accordion</span></pre>
+  
   <h3>Usage</h3>
   <h4>HTML</h4>
   <p>To activate the accordion add <span>.jsa</span> class to the &lt;dl&gt; tag. The dt needs to have an anchor tag for best accessibility experience.</p>
   <pre>
-&lt;dl class=&quot;jsa&quot;&gt;
+&lt;<span class="h-el">dl</span> <span class="h-attr">class</span>=&quot;<span class="h-string">jsa</span>&quot;&gt;
 
-  &lt;dt&gt;&lt;a href="#"&gt;Title One&lt;/a&gt;&lt;/dt&gt;
-  &lt;dd&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. &lt;/dd&gt;
+  &lt;<span class="h-el">dt</span>&gt;&lt;<span class="h-el">a</span> <span class="h-attr">href</span>="<span class="h-string">#</span>"&gt;Title One&lt;/<span class="h-el">a</span>&gt;&lt;/<span class="h-el">dt</span>&gt;
+  &lt;<span class="h-el">dd</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;/<span class="h-el">dd</span>&gt;
 
-  &lt;dt&gt;&lt;a href="#"&gt;Title Two&lt;/a&gt;&lt;/dt&gt;
-  &lt;dd&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. &lt;/dd&gt;
+  &lt;<span class="h-el">dt</span>&gt;&lt;<span class="h-el">a</span> <span class="h-attr">href</span>="<span class="h-string">#</span>"&gt;Title Two&lt;/<span class="h-el">a</span>&gt;&lt;/<span class="h-el">dt</span>&gt;
+  &lt;<span class="h-el">dd</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;/<span class="h-el">dd</span>&gt;
 
-  &lt;dt&gt;&lt;a href="#"&gt;Title Three&lt;/a&gt;&lt;/dt&gt;
-  &lt;dd&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. &lt;/dd&gt;
+  &lt;<span class="h-el">dt</span>&gt;&lt;<span class="h-el">a</span> <span class="h-attr">href</span>="<span class="h-string">#</span>"&gt;Title Three&lt;/<span class="h-el">a</span>&gt;&lt;/<span class="h-el">dt</span>&gt;
+  &lt;<span class="h-el">dd</span>&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;/<span class="h-el">dd</span>&gt;
 
-&lt;/dl&gt;</pre>
+&lt;/<span class="h-el">dl</span>&gt;</pre>
 <h4>JavaScript</h4>
 
 <pre>
-// Instantiate
-var example = new jsa();
+<span class="hjs-comment">// Instantiate</span>
+<span class="hjs-var">var</span> example = <span class="hjs-new">new</span> jsa();
 
-// Default with .jsa class
+<span class="hjs-comment">// Default with .jsa class</span>
 example.init();
-
-// Custom selector
-example.init('#myAccordion');
 </pre>
 
+<h3>Options</h3>
+<h4>Parent Selector</h4>
+<p>The default required selector name is &lt;dl <span class="h-el"><strong>class="jsa"</strong></span>&gt;. You may choose a different selector name as long as you specify it in the init function as the first argument. This is useful when creating multiple accordions on a page. Each instance must be unique.</p>
+<pre>
+<span class="hjs-comment">// Custom selector</span>
+example.init(<span class="h-attr">'#myAccordion'</span>);
+example2.init(<span class="h-attr">'.accordion2'</span>);
+</pre>
+
+
+<p>By default the selector for opening each drawer is the anchor tag in the  <strong><span class="h-el">&lt;dt&gt;</span></strong> tag. You can change this by updating the <strong>dt</strong> option.</p>
+
+<pre>
+<span class="hjs-comment">// Custom question selector</span>
+<span class="hjs-comment">example.init( '#myAccordion'</span>, { dt: <span class="h-el">"dt a"</span>} );
+</pre>
 
 </article>
 
 </div>
 
-  <script src="https://cdn.jsdelivr.net/gh/homerocavazos/js-accordion@master/_js/jsa.min.1.2.js" integrity="sha256-hCA6iRo13x6jnWhMKkj+aWNqvscvagfYn3mIusutscg="
-    crossorigin="anonymous"></script>
+  <script src="./_js/jsa.1.2.js"></script>
 
   <script>
 

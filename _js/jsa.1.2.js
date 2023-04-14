@@ -6,9 +6,9 @@
  ___/\/\/\/\____/\/\/\/\/\____/\/\____/\/\_
 __________________________________________
 
- Version: 1.2.3
+ Version: 1.2.5
   Author: Homero Cavazos
- Website: https://github.com/homerocavazos/jsa
+ Website: https://jsa.homerocavazos.com/
 
  */
 "use strict"
@@ -19,7 +19,7 @@ jsa = (() => {
     const _ = this
 
     _.settings = {
-      dt: "a",
+      dt: "dt a",
       dd: "dd",
     }
     _.el = null
@@ -125,3 +125,4 @@ jsa.prototype.init = function (el, opts) {
     return index
   }, 1)
 }
+

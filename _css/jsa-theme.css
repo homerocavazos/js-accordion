@@ -4,10 +4,14 @@ dt {
   position: relative;
   /* cursor: pointer; */
   background-color: #f1faff;
-  padding: 15px 30px;
+  
   margin: 2px 0;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
+}
+dt a {
+  width: 100%;
+  padding: 15px 30px;
 }
 dt a::after {
   content: "";
@@ -19,13 +23,12 @@ dt a::after {
   background-position: center center;
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url(https://cdn.jsdelivr.net/gh/homerocavazos/js-accordion@master/_imgs/icon-plus-black.png);
+  background-image: url(../_imgs/icon-plus-black.png);
 }
 dt a.active::after {
-  background-image: url(https://cdn.jsdelivr.net/gh/homerocavazos/js-accordion@master/_imgs/icon-minus-black.png);
+  background-image: url(../_imgs/icon-minus-black.png);
 }
 
-dt:nth-child(4n + 1),
 dt:nth-child(4n + 1) {
   background-color: #e1f2fb;
 }
