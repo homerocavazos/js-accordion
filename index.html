@@ -109,12 +109,15 @@ example2.init(<span class="h-attr">'.accordion2'</span>);
 
 </div>
 
-  <script src="./_js/jsa.1.2.js"></script>
-
-  <script>
+  <script type="module">
+    import { jsa } from './_js/jsa.js';
 
     var example = new jsa();
-    example.init();
+    example.init(null,
+    {
+      openFirst: true
+    }
+    );
 
   </script>
 </body>

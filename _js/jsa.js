@@ -6,7 +6,7 @@
  ___/\/\/\/\____/\/\/\/\/\____/\/\____/\/\_
 __________________________________________
 
- Version: 1.2.6
+ Version: 1.2.7
   Author: Homero Cavazos
  Website: https://jsa.homerocavazos.com/
 
@@ -21,6 +21,8 @@ jsa = (() => {
     _.settings = {
       dt: "dt a",
       dd: "dd",
+      openFirst: false,
+      openAll: false,
     }
     _.el = null
   } //jsa function
@@ -112,12 +114,18 @@ jsa.prototype.init = function (el, opts) {
   )
   _.definitions.reduce((index, definition) => {
     definition.classList.add("collapsed")
+    if(_.settings.openFirst && index === 1) definition.classList.add('show')
+    if(_.settings.openAll) definition.classList.add('show')
+
     definition.setAttribute("id", `${_.getID()}-definition` + index)
     definition.setAttribute("aria-labelledby", `${_.getID()}-term` + index)
     index += 1
     return index
   }, 1)
   _.terms.reduce((index, term) => {
+    if(_.settings.openFirst && index === 1) term.classList.add('active')
+    if(_.settings.openAll) term.classList.add('active')
+
     term.setAttribute("id", `${_.getID()}-term` + index)
     term.setAttribute("data-target", `${_.getID()}-definition` + index)
     term.setAttribute("tabindex", "0")
