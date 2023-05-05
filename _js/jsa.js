@@ -6,13 +6,13 @@
  ___/\/\/\/\____/\/\/\/\/\____/\/\____/\/\_
 __________________________________________
 
- Version: 1.2.5
+ Version: 1.2.6
   Author: Homero Cavazos
  Website: https://jsa.homerocavazos.com/
 
  */
 "use strict"
-let jsa = window.jsa || {}
+export let jsa = window.jsa || {}
 
 jsa = (() => {
   function jsa() {
