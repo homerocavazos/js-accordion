@@ -6,7 +6,7 @@
  ___/\/\/\/\____/\/\/\/\/\____/\/\____/\/\_
 __________________________________________
 
- Version: 1.2.7
+ Version: 1.2.8
   Author: Homero Cavazos
  Website: https://jsa.homerocavazos.com/
 
@@ -81,7 +81,7 @@ jsa.prototype.logic = function (e) {
   let _ = this // this jsa obj
   let el = e.target
 
-  if (el.nodeName === 'A' && el.parentNode.nodeName === 'DT') {
+  if ( el.parentNode.nodeName === 'DT' ) {
     e.preventDefault();
     e.stopPropagation();
 
