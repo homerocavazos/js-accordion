@@ -6,7 +6,7 @@
  ___/\/\/\/\____/\/\/\/\/\____/\/\____/\/\_
 __________________________________________
 
- Version: 1.2.8
+ Version: 1.2.9
   Author: Homero Cavazos
  Website: https://jsa.homerocavazos.com/
 
@@ -84,16 +84,11 @@ jsa.prototype.logic = function (e) {
   if ( el.parentNode.nodeName === 'DT' ) {
     e.preventDefault();
     e.stopPropagation();
+    
+    _.reset()
+    _.collapse(el)
+    el.blur()
 
-    if (el.classList.value === "active") {
-      el.classList.remove("active")
-      _.reset()
-      el.blur()
-    } else {
-      _.reset()
-      _.collapse(el)
-      el.blur()
-    }
   }
 
 }
