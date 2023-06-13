@@ -6,7 +6,7 @@
  ___/\/\/\/\____/\/\/\/\/\____/\/\____/\/\_
 __________________________________________
 
- Version: 1.3.0
+ Version: 1.3.1
   Author: Homero Cavazos
  Website: https://jsa.homerocavazos.com/
 
