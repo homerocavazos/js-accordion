@@ -10,7 +10,7 @@ body {
 }
 
 section {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
 }
 section div {
@@ -33,6 +33,16 @@ h1 span {
   background-color: coral;
   color: #ffffff;
   font-weight: 400;
+  border-radius: 5px;
+}
+.bg-yellow {
+  background-color: #eec13b;
+}
+.bg-blue {
+  background-color: #71b5f8;
+}
+.bg-orange {
+  background-color: #ffa042;
 }
 h2 {
   position: relative;
@@ -60,7 +70,7 @@ h2::before {
   background-image: url(../_imgs/fullMonkey-bw.svg);
 }
 h3 {
-  margin-top: 40px;
+  /* margin-top: 40px; */
   font-size: 16px;
   font-weight: 600;
   padding: 10px 0 0 0;
@@ -76,6 +86,7 @@ h4 {
 }
 p {
   font-size: 14px;
+  font-size: clamp(1rem, 1vw, 1.5rem);
   color: #333000;
   font-weight: 400;
   margin: 10px 0;
@@ -94,30 +105,53 @@ dt {
   font-weight: 700;
 }
 pre {
-  overflow-x: scroll;
-  background-color: #d3d3d326;
+  /* overflow-x: scroll; */
+  background-color: #232526;
   border-radius: 5px;
   font-size: 11px;
   padding: 1em;
   color: #abb2bf;
   background: #282c34;
+
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }
-.h-el{
+.pink {
+  color: #ca8899;
+}
+.yellow {
+  color: #fbd74b;
+}
+.green {
+  color: #8fb286;
+}
+.red {
+  color: #de7067;
+}
+.lime {
+  color: #a6c413;
+}
+.h-el {
   color: #e06c75;
 }
-.h-attr{
+.h-attr {
   color: #d19a66;
 }
-.h-string{
+.h-string {
   color: #98c379;
 }
-.hjs-new{
+.hjs-new {
   color: #9fae62;
+  color: #f24b3c;
 }
-.hjs-var{
+.hjs-var {
   color: #e97f4d;
 }
-.hjs-comment{
+.hjs-comment {
   color: #88786a;
 }
 div {
@@ -179,14 +213,47 @@ a {
     padding: 10px 30px;
   }
   pre {
-    font-size: 14px;
+    font-size: clamp(1rem, 1vw, 1.5rem);
     font-weight: 400;
-    overflow-x:visible;
+    /* overflow-x: visible; */
   }
-
 }
 .underline {
   border-bottom: 1px lightblue solid;
   margin-bottom: 10px;
   padding-bottom: 10px;
+}
+
+section {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+section div {
+  width: 100%;
+}
+section div:first-of-type {
+  overflow: hidden;
+}
+
+@media (min-width: 925px) {
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  section div {
+    flex: 1;
+    width: 50%;
+  }
+  section div:first-of-type {
+    flex: 1;
+  }
+}
+
+a.comment-link {
+  color: #88786a;
+  text-decoration: underline;
 }

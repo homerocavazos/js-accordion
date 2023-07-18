@@ -4,7 +4,7 @@ dt {
   position: relative;
   /* cursor: pointer; */
   background-color: #f1faff;
-  
+
   margin: 2px 0;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
@@ -34,13 +34,14 @@ dt:nth-child(4n + 1) {
 }
 dd {
   max-height: 0;
-  transition: max-height 0.5s cubic-bezier(0.1, -0.01, 0.07, 0.99);
+  /* transition: max-height 0.5s cubic-bezier(0.1, -0.01, 0.07, 0.99); */
   overflow: hidden;
   background-color: #ffffff;
   padding: 0;
   margin: 0;
 }
 dd.show {
-  max-height: 500px;
-  transition: max-height 1s cubic-bezier(0.64, -0.01, 0.07, 0.99);
+  padding: 2em;
+  max-height: 100%;
+  /* transition: max-height 1s cubic-bezier(0.64, -0.01, 0.07, 0.99); */
 }
