@@ -26,31 +26,307 @@
       content="Homero Cavazos is an Austin Texas based developer."
     />
     <title>JavaScript Accordion</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="_css/jsa-theme.css" />
+   
 
-    <link rel="stylesheet" href="_css/style.css" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-64412307-1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
+
+
+
+
+    <style>
+
+dt {
+  display: flex;
+  align-items: center;
+  position: relative;
+  /* cursor: pointer; */
+  background-color: #f1faff;
+
+  margin: 2px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+dt a {
+  width: 100%;
+  padding: 15px 30px;
+}
+dt a::after {
+  content: "+";
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  right: 30px;
+  top:20%;
+  font-size: 1.5rem;
+  vertical-align: middle;
+  /* background-position: center center; */
+  display: inline-block;
+  /* background-repeat: no-repeat;
+  background-image: url(./_imgs/icon-plus-black.png); */
+}
+dt a.active::after {
+  content: '-';
+  /* background-image: url(./_imgs/icon-minus-black.png); */
+}
+
+dt:nth-child(4n + 1) {
+  background-color: #e1f2fb;
+}
+dd {
+  max-height: 0;
+
+  overflow: hidden;
+  background-color: #ffffff;
+  padding: 0;
+  margin: 0;
+}
+dd.show {
+  padding: 2em;
+  max-height: 100%;
+}
+
+
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
-      gtag("js", new Date());
+      body {
+        color: rgba(0, 0, 0, 0.87);
+        font-family: "Helvetica Neue", sans-serif;
+        margin: 30px 0;
+        padding: 0 15px;
+        font-display: swap;
+      }
 
-      gtag("config", "UA-64412307-1");
-    </script>
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 600;
+        letter-spacing: -0.03rem;
+      }
+
+      section {
+        /* max-width: 1200px; */
+        margin: 0 auto;
+      }
+      section div {
+        max-width: 1140px;
+        margin: 0 auto;
+      }
+      h1 {
+        position: relative;
+        /* font-weight: 100; */
+        font-size: 18px;
+        font-size: clamp(2.3rem, 1vw, 1rem);
+        margin: 0;
+        /* padding-left: 36px; */
+      }
+
+      h1 span {
+        /* border: 1px solid lightblue; */
+        padding: 5px 10px;
+        margin: 0 1px;
+        display: inline-block;
+        background-color: coral;
+        color: #ffffff;
+        font-weight: 400;
+        border-radius: 5px;
+      }
+      .bg-yellow {
+        background-color: #eec13b;
+      }
+      .bg-blue {
+        background-color: #71b5f8;
+      }
+      .bg-orange {
+        background-color: #ffa042;
+      }
+      h2 {
+        position: relative;
+        font-size: 14px;
+
+        margin-bottom: 40px;
+        line-height: 1;
+        /* padding-left: 20px; */
+        display: flex;
+      }
+      h2 span {
+        font-weight: 400;
+      }
+      h3 {
+        /* margin-top: 40px; */
+        font-size: 16px;
+        font-size: clamp(1.5rem, 1vw, 1rem);
+        padding: 10px 0 0 0;
+        width: 100%;
+        border-top: 1px lightblue solid;
+      }
+      h4 {
+        font-size: 16px;
+
+        padding: 0 0 0 10px;
+        margin: 0;
+        width: 100%;
+      }
+      p {
+        font-size: clamp(1.5rem, 1vw, 1rem);
+        color: #333000;
+        font-weight: 200;
+        margin: 10px 0;
+        /* font-family: Arial, Helvetica, sans-serif; */
+      }
+      hr {
+        background-color: lightpink;
+        border: none;
+        height: 1px;
+      }
+
+      dt a {
+        font-weight: 600;
+      }
+      pre {
+        /* overflow-x: scroll; */
+        background-color: #232526;
+        border-radius: 5px;
+        font-size: 11px;
+        padding: 1em;
+        color: #ddd;
+        background: #282c34;
+
+        overflow-x: auto;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+      }
+      .pink {
+        color: #ca8899;
+      }
+      .yellow {
+        color: #fbd74b;
+      }
+      .green {
+        color: #8fb286;
+      }
+      .red {
+        color: #de7067;
+      }
+      .lime {
+        color: #a6c413;
+      }
+      .h-el {
+        color: #e06c75;
+      }
+      .h-attr {
+        color: #d19a66;
+      }
+      .h-string {
+        color: #98c379;
+      }
+      .hjs-new {
+        color: #9fae62;
+        color: #f24b3c;
+      }
+      .hjs-var {
+        color: #e97f4d;
+      }
+      .hjs-comment {
+        color: #88786a;
+      }
+      div {
+        padding: 10px 5px;
+      }
+
+      .download {
+        position: relative;
+        font-size: 14px;
+        margin-bottom: 40px;
+        padding-left: 20px;
+        display: flex;
+      }
+
+      a {
+        font-family: "Red Hat Text", sans-serif;
+        font-weight: 400;
+        text-decoration: none;
+        color: #333000;
+      }
+      .flex {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        max-width: 100%;
+        align-items: flex-end;
+      }
+      .flex p {
+        padding: 0;
+        margin: 0;
+      }
+      .flex a {
+        margin: 0;
+      }
+
+      @media (min-width: 768px) {
+
+        div {
+          padding: 10px 30px;
+        }
+        pre {
+          font-size: clamp(1rem, 1vw, 1.5rem);
+          font-weight: 400;
+
+        }
+      }
+      .underline {
+        border-bottom: 1px lightblue solid;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+      }
+
+      section {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      section div {
+        width: 100%;
+      }
+      section div:first-of-type {
+        overflow: hidden;
+      }
+
+      @media (min-width: 925px) {
+        section {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+        }
+        section div {
+          flex: 1;
+          width: 50%;
+        }
+        section div:first-of-type {
+          flex: 1;
+        }
+      }
+
+      a.comment-link {
+        color: #88786a;
+        text-decoration: underline;
+      }
+
+    </style>
+    
   </head>
   <body>
     <div>
       <h1><span class="bg-yellow">J</span><span class="bg-orange">S</span><span class="bg-blue">A</span> JavaScript Accordion</h1>
+      
       <h2><span style="display: inline-block;margin-right: 5px;"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16" height="16"
         viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;top:3px;" xml:space="preserve">
      <style type="text/css">
@@ -206,7 +482,6 @@ npm i <span class="h-string">@js-toolbox/js-accordion</span></pre>
 <span class="yellow">}</span>
 <span class="pink">dd</span> <span class="yellow">{</span>
   <span class="green">max-height:</span> 0;
-  <span class="green">transition:</span> max-height 0.5s cubic-bezier(0.1, -0.01, 0.07, 0.99);
   <span class="green">overflow:</span> hidden;
   <span class="green">background-color:</span> #ffffff;
   <span class="green">padding:</span> 0;
@@ -215,7 +490,6 @@ npm i <span class="h-string">@js-toolbox/js-accordion</span></pre>
 <span class="pink">dd</span>.<span class="red">show</span> <span class="yellow">{</span>
   <span class="green">padding:</span> 1em;
   <span class="green">max-height:</span> 100%;
-  <span class="green">transition:</span> max-height 1s cubic-bezier(0.64, -0.01, 0.07, 0.99);
 <span class="yellow">}</span>
           </pre>
           </div>
@@ -351,12 +625,13 @@ example2.init(<span class="h-attr">'.bar'</span>); <span class="hjs-comment">// 
     </div>
 
     <script type="module">
-      import { jsa } from "./_js/jsa.js";
+      "use strict";export let jsa=window.jsa||{};jsa=function(){this.settings={dt:"dt a",dd:"dd",openFirst:!1,openAll:!1,toggle:!1},this.el=null},jsa.prototype.setOpts=function(t){let e=this;if("object"==typeof t)for(let s in t)t.hasOwnProperty(s)&&(e.settings[s]=t[s])},jsa.prototype.setParentEL=function(t){this.el=t||".jsa"},jsa.prototype.getID=function(t){return this.el.replace(".","")},jsa.prototype.getObjs=function(t){return Object.keys(t).map((function(e){return t[e]}))},jsa.prototype.reset=function(){this.terms.map((function(t){t.classList.remove("active")})),this.definitions.map((function(t){t.classList.add("collapsed"),t.classList.remove("show")}))},jsa.prototype.collapse=function(t){t.classList.add("active");let e=t.dataset.target,s=document.getElementById(e);s.classList.remove("collapsed"),s.classList.add("show")},jsa.prototype.logic=function(t){let e=this,s=t.target;"DT"===s.parentNode.nodeName&&(t.preventDefault(),t.stopPropagation(),!0===e.settings.toggle&&"active"===s.classList.value?(s.classList.remove("active"),e.reset(),s.blur()):(e.reset(),e.collapse(s),s.blur()))},jsa.prototype.init=function(t,e){let s=this;s.setParentEL(t),s.setOpts(e),s.terms=s.getObjs(document.querySelectorAll(`${s.el} ${s.settings.dt}`)),document.querySelector(s.el)&&document.querySelector(s.el).addEventListener("click",s.logic.bind(s)),s.definitions=s.getObjs(document.querySelectorAll(`${s.el} ${s.settings.dd}`)),s.definitions.reduce(((t,e)=>(e.classList.add("collapsed"),s.settings.openFirst&&1===t&&e.classList.add("show"),s.settings.openAll&&e.classList.add("show"),e.setAttribute("id",`${s.getID()}-definition`+t),e.setAttribute("aria-labelledby",`${s.getID()}-term`+t),t+=1)),1),s.terms.reduce(((t,e)=>(s.settings.openFirst&&1===t&&e.classList.add("active"),s.settings.openAll&&e.classList.add("active"),e.setAttribute("id",`${s.getID()}-term`+t),e.setAttribute("data-target",`${s.getID()}-definition`+t),e.setAttribute("tabindex","0"),t+=1)),1)};
 
       var example = new jsa();
       example.init(null, {
         openFirst: true,
         toggle: true,
+        openAll: true
       });
     </script>
   </body>

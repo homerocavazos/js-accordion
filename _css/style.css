@@ -4,10 +4,20 @@
 }
 body {
   color: rgba(0, 0, 0, 0.87);
-  font-family: "Red Hat Text", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
   margin: 30px 0;
   padding: 0 15px;
   font-display: swap;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: -0.03rem;
 }
 
 section {
@@ -20,8 +30,9 @@ section div {
 }
 h1 {
   position: relative;
-  font-weight: 100;
+  /* font-weight: 100; */
   font-size: 18px;
+  font-size: clamp(2.3rem, 1vw, 1rem);
   margin: 0;
   /* padding-left: 36px; */
 }
@@ -48,47 +59,45 @@ h1 span {
 h2 {
   position: relative;
   font-size: 14px;
-  font-weight: 400;
+
   margin-bottom: 40px;
   line-height: 1;
   /* padding-left: 20px; */
   display: flex;
 }
-
+h2 span {
+  font-weight: 400;
+}
 h3 {
   /* margin-top: 40px; */
   font-size: 16px;
-  font-weight: 600;
+  font-size: clamp(1.5rem, 1vw, 1rem);
   padding: 10px 0 0 0;
   width: 100%;
   border-top: 1px lightblue solid;
 }
 h4 {
   font-size: 16px;
-  font-weight: 400;
+
   padding: 0 0 0 10px;
   margin: 0;
   width: 100%;
 }
 p {
-  font-size: 14px;
-  font-size: clamp(1rem, 1vw, 1.5rem);
+  font-size: clamp(1.5rem, 1vw, 1rem);
   color: #333000;
-  font-weight: 400;
+  font-weight: 200;
   margin: 10px 0;
+  /* font-family: Arial, Helvetica, sans-serif; */
 }
 hr {
   background-color: lightpink;
   border: none;
   height: 1px;
 }
-dl,
-dt,
-dd {
-  font-family: "Red Hat Text", sans-serif;
-}
-dt {
-  font-weight: 700;
+
+dt a {
+  font-weight: 600;
 }
 pre {
   /* overflow-x: scroll; */
@@ -96,7 +105,8 @@ pre {
   border-radius: 5px;
   font-size: 11px;
   padding: 1em;
-  color: #abb2bf;
+  /* color: #abb2bf; */
+  color: #ddd;
 
   background: #282c34;
 
@@ -175,19 +185,12 @@ a {
 }
 
 @media (min-width: 768px) {
-  h1 {
-    font-size: 30px;
-  }
-  h2 {
-    font-size: 16px;
-  }
   div {
     padding: 10px 30px;
   }
   pre {
     font-size: clamp(1rem, 1vw, 1.5rem);
     font-weight: 400;
-    /* overflow-x: visible; */
   }
 }
 .underline {
