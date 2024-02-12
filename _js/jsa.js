@@ -6,7 +6,7 @@
  ___/\/\/\/\____/\/\/\/\/\____/\/\____/\/\_
 __________________________________________
 
- Version: 1.3.3
+ Version: 1.4.0
   Author: Homero Cavazos
  Website: https://jsa.homerocavazos.com/
 
@@ -23,7 +23,6 @@ jsa = (() => {
       dd: "dd",
       openFirst: false,
       openAll: false,
-      toggle: false,
     };
     _.el = null;
   } //jsa function
@@ -85,19 +84,19 @@ jsa.prototype.logic = function (e) {
     e.preventDefault();
     e.stopPropagation();
 
-    if (_.settings.toggle === true) {
-      if (el.classList.value === "active") {
-        el.classList.remove("active");
-        _.reset();
-        el.blur();
-      } else {
-        _.reset();
-        _.collapse(el);
-        el.blur();
-      }
+    let id = el.id;
+    let def = document.querySelector(`dd[aria-labelledby=${id}]`);
+
+    if (el.classList.value === "active") {
+      el.classList.remove("active");
+      def.classList.add("collapsed");
+      def.classList.remove("show");
+      console.log(def);
+      el.blur();
     } else {
-      _.reset();
-      _.collapse(el);
+      el.classList.add("active");
+      def.classList.remove("collapsed");
+      def.classList.add("show");
       el.blur();
     }
   } // if DT
